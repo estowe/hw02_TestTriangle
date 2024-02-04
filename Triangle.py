@@ -1,14 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Jan 14 13:44:00 2016
-Updated Jan 21, 2018
-
-The primary goal of this file is to demonstrate a simple python program to classify triangles
-
-@author: jrr
-@author: rk
-"""
-
+#!/bin/python3
 def classifyTriangle(a,b,c):
     """
     Your correct code goes here...  Fix the faulty logic below until the code passes all of 
@@ -31,12 +21,12 @@ def classifyTriangle(a,b,c):
     if a > 200 or b > 200 or c > 200:
         return 'Input greater than 200'
 
-    elif a <= 0 or b <= 0 or c <= 0:
+    if a <= 0 or b <= 0 or c <= 0:
         return 'Input less than 0'
     
     # verify that all 3 inputs are integers  
     # Python's "isinstance(object,type) returns True if the object is of the specified type
-    elif not(isinstance(a,int) and isinstance(b,int) and isinstance(c,int)):
+    if not(isinstance(a,int) and isinstance(b,int) and isinstance(c,int)):
         return 'Input not integer'
       
     # This information was not in the requirements spec but 
@@ -56,4 +46,4 @@ def classifyTriangle(a,b,c):
     elif a == b or b == c or c == b:
         return 'Isoceles'
     else:
-        return 'Not a defined triangle'
+        return 'Not a defined triangle' 
