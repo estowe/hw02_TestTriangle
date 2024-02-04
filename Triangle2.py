@@ -1,14 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Jan 14 13:44:00 2016
-Updated Jan 21, 2018
-
-The primary goal of this file is to demonstrate a simple python program to classify triangles
-
-@author: jrr
-@author: rk
-"""
-
+#!/bin/python3
 def classifyTriangle(a,b,c):
     """
     Your correct code goes here...  Fix the faulty logic below until the code passes all of 
@@ -56,4 +46,20 @@ def classifyTriangle(a,b,c):
     elif a == b or b == c or c == b:
         return 'Isoceles'
     else:
-        return 'Not a defined triangle'
+        return 'Not a defined triangle' 
+    
+import sys
+
+class InvalidTriangleError(Exception): #Thank you ChatGPT for this contribution!
+    pass
+
+if len(sys.argv) == 4: 
+    input_side1 = int(sys.argv[1])
+    input_side2 = int(sys.argv[2])
+    input_side3 = int(sys.argv[3])
+
+    try:
+        process_results = classifyTriangle(input_side1, input_side2, input_side3)
+        print(process_results) 
+    except InvalidTriangleError as e: #Thank you ChatGPT for this contribution!
+        print(f"I'm sorry, but one of your sides is not a valid entry.\n{str(e)}")
